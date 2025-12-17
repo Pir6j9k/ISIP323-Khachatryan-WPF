@@ -7,6 +7,63 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button x:Name="BackBtn" 
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Content="Назад"
+                        Padding="5"
+                        HorizontalAlignment="Left"
+                        Margin="10" 
+                        Click="BackBtn_Click"/>
+
+                <TextBlock x:Name="TitleTextBlock"
+                           Grid.Column="1"
+                           Grid.Row="0"
+                           HorizontalAlignment="Center"
+                           FontSize="18"
+                           Margin="10,10,60,10"/>
+                <TextBlock Text="Стоимость: "
+                           x:Name="PriceTextBlock"
+                           Grid.Column="2"
+                           Margin="10"/>
+            </Grid>
+        </StackPanel>
+
+
+
+        <Frame x:Name="MainFrame"
+               Source="Pages/MainPage.xaml"
+               Grid.Row="1"
+               Grid.ColumnSpan="2"
+               NavigationUIVisibility="Hidden"
+               Navigated="MainFrame_Navigated"
+               NavigationStopped="MainFrame_NavigationStopped"/>
+        <ProgressBar x:Name="Progress" 
+                     Grid.Row="2"
+                     Grid.Column="2"
+                     Minimum="1"
+                     Maximum="6"
+                     Height="15"
+                     Value="1"/>
     </Grid>
 </Window>
