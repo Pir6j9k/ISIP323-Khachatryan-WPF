@@ -7,6 +7,54 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Row="0"
+                 Grid.Column="0"
+                 Text="Поиск"/>
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                Content="Вход/Регистрация"/>
+        <Button Grid.Row="0"
+                Grid.Column="2"
+                Content="Личный кабинет"/>
+        <StackPanel Grid.Row="1"
+                    Grid.ColumnSpan="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <ListBox Grid.Row="0"
+                         Grid.Column="0"
+                         x:Name="FilmsListBox">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="{Binding Name, StringFormat=Название: {0}}"/>
+                                <TextBlock Text="{Binding Rating}"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </StackPanel>
+
+
+
     </Grid>
 </Window>

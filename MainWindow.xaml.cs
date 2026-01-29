@@ -20,9 +20,26 @@ namespace ISIP323_Khachatryan_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public class Films
+        {
+            public string Name { get; set; }
+            public double Rating { get; set; }
+            public int Data { get; set; }
+            public string AgeRating { get; set; }
+        }
         public MainWindow()
         {
             InitializeComponent();
+            List<Films> films = new List<Films>
+            {
+                new Films
+                {
+                    Name = "ffff",
+                    Rating = 4.2,
+                    AgeRating = "13+",
+                }
+            };
+            FilmsListBox.ItemsSource = films;
         }
     }
 }
