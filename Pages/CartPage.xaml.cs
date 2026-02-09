@@ -37,8 +37,8 @@ namespace ISIP323_Khachatryan_WPF.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Button button = sender as Button;
-            Products selected = button.DataContext as Products;
+            
+            Products selected = ProductList.SelectedItem as Products;
 
             Carts.products.Remove(selected);
             ProductList.ItemsSource = null;
