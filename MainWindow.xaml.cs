@@ -23,6 +23,7 @@ namespace ISIP323_Khachatryan_WPF
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new Pages.ProductPage());
         }
     }
 }
