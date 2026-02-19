@@ -76,9 +76,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <TextBlock x:Name="TxtNoTickets" Text="У вас пока нет купленных билетов." 
+            <TextBlock x:Name="TxtNoTickets" Text="У вас нет купленных билетов." 
                        Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       Foreground="Black" FontSize="16" Visibility="Collapsed"/>
+                       Foreground="White" FontSize="16" Visibility="Collapsed"/>
         </Grid>
     </Grid>
 </Page>
