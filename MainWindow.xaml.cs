@@ -23,6 +23,18 @@ namespace ISIP323_Khachatryan_WPF
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new Pages.BuildingPage());
+
+        }
+
+        private void BuildBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Pages.BuildingPage());
+        }
+
+        private void SavedBuildBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Pages.SavedBuildsPage());
         }
     }
 }

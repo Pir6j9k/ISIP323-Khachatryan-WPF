@@ -7,6 +7,42 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="DarkBlue" BorderThickness="1" >
+            <StackPanel Margin="5">
+                <TextBlock Text="Собери сам" FontSize="22" FontWeight="Bold" Foreground="Blue" Margin="10" HorizontalAlignment="Center"/>
+
+                <Border CornerRadius="5"
+                        Margin="10" Padding="5"
+                        Background="Blue">
+
+                    <Button Name="BuildBtn" 
+                            Content="Создать сборку"  
+                            Foreground="White"
+                            Click="BuildBtn_Click" 
+                            BorderThickness="0"
+                            FontSize="14" FontWeight="Bold"
+                            Background="Blue"/>
+                </Border>
+
+                <Border CornerRadius="5"
+                        Background="Blue"
+                        Margin="10" Padding="5">
+                    <Button Name="SavedBuildBtn" 
+                            Content="Мои сборки"  
+                            Foreground="White"
+                            BorderThickness="0"
+                            Background="Blue"
+                            FontSize="14" FontWeight="Bold"
+                            Click="SavedBuildBtn_Click"/>
+                </Border>
+            </StackPanel>
+        </Border>
+
+        <Frame x:Name="MainFrame" Grid.Column="1" BorderBrush="DarkBlue" BorderThickness="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
