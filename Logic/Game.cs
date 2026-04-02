@@ -1,0 +1,152 @@
+﻿using ISIP323_Khachatryan_WPF.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ISIP323_Khachatryan_WPF.Logic
+{
+    public class Game
+    {
+        public Player Player { get; private set; }
+        public List<Enemy> CurrentEnemies { get; private set; }
+        public Item CurrentItemInChest { get; private set; }
+
+        public int TurnCount { get; private set; }
+        private Random random;
+
+        public event Action<string> OnLogMessage;
+
+        public Game()
+        {
+            Player = new Player(1000);
+            random = new Random();
+            TurnCount = 1;
+            CurrentEnemies = new List<Enemy>();
+        }
+
+        private void Log(string message) => OnLogMessage?.Invoke(message);
+
+        public void NextRoom()
+        {
+            CurrentEnemies.Clear();
+            CurrentItemInChest = null;
+
+            Log($"\n=== Этаж {TurnCount} ===");
+
+            if (TurnCount > 0 && TurnCount % 10 == 0)
+            {
+                Enemy boss = GenerateRandomBoss();
+                CurrentEnemies.Add(boss);
+                Log($"!!! ПОЯВИЛСЯ БОСС: {boss.Name} !!!");
+            }
+            else if (random.NextDouble() < 0.5)
+            {
+                Chest chest = new Chest();
+                CurrentItemInChest = chest.Open();
+                Log($"*** Вы нашли сундук! Внутри: {CurrentItemInChest.GetInfo()} ***");
+            }
+            else
+            {
+                int enemyCount = random.Next(1, 4);
+                for (int i = 0; i < enemyCount; i++)
+                {
+                    CurrentEnemies.Add(GenerateRandomEnemy());
+                }
+                Log($"В комнате врагов: {CurrentEnemies.Count}. Приготовьтесь к бою!");
+            }
+        }
+
+        public void PlayerAttack()
+        {
+            Log($"\n--- Твой ход ---");
+
+            if (CurrentEnemies.Count > 0)
+            {
+                var target = CurrentEnemies.First();
+                Player.Attack(target, Log);
+
+                if (!target.IsAlive())
+                {
+                    Log($"{target.Name} повержен!");
+                    CurrentEnemies.Remove(target);
+                }
+
+                if (CurrentEnemies.Count == 0)
+                {
+                    Log("\nВсе враги в комнате зачищены!");
+                    TurnCount++;
+                }
+                else
+                {
+                    EnemiesTurn();
+                }
+            }
+        }
+
+        public void PlayerDefend()
+        {
+            if (CurrentEnemies.Count > 0)
+            {
+                Player.Defend(Log);
+                EnemiesTurn();
+            }
+        }
+
+        private void EnemiesTurn()
+        {
+            Log($"\n--- Ход врагов ---");
+            foreach (var enemy in CurrentEnemies)
+            {
+                if (enemy.IsAlive())
+                {
+                    enemy.PerformAttack(Player, Log);
+                    enemy.SpecialAbility(Player, Log);
+                }
+            }
+        }
+
+        public void TakeItem()
+        {
+            if (CurrentItemInChest != null)
+            {
+                CurrentItemInChest.Use(Player, Log);
+                CurrentItemInChest = null;
+                TurnCount++;
+                Log("\nВы взяли предмет и идете дальше...");
+            }
+        }
+
+        private Enemy GenerateRandomEnemy()
+        {
+            int type = random.Next(0, 3);
+            switch (type)
+            {
+                case 0: return new Goblin();
+                case 1: return new Skeleton();
+                case 2: return new Mage();
+                default: return new Goblin();
+            }
+        }
+
+        private Enemy GenerateRandomBoss()
+        {
+            int type = random.Next(0, 3);
+            switch (type)
+            {
+                case 0: return new VVG();
+                case 1: return new Kovalsky();
+                case 2: return new ArchmageCPP();
+                default: return new PestovC();
+            }
+        }
+
+        public void LeaveItem()
+        {
+            Log("\nВы решили оставить предмет и пойти дальше.");
+            CurrentItemInChest = null;
+            TurnCount++;
+        }
+    }
+}
