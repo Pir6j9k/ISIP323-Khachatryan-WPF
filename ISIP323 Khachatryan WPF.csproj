@@ -63,12 +63,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Logic\Chest.cs" />
+    <Compile Include="Logic\Game.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Enemies.cs" />
+    <Compile Include="Models\Items.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,6 +98,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kovalsky.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pestovc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\archmagecpp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\skeleton.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\goblin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\chest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dungeon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\vvg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
