@@ -6,7 +6,78 @@
         xmlns:local="clr-namespace:ISIP323_Khachatryan_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="#E0B0FF">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#660099" Padding="10" CornerRadius="5" Margin="10">
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" x:Name="TxtTurn" Text="Этаж: 1" FontSize="20" FontWeight="Bold" Foreground="White" Margin="5"/>
+                    <TextBlock Grid.Column="1" x:Name="TxtHP" Text="HP: 100/100" FontSize="20" FontWeight="Bold" Foreground="White" Margin="5" TextAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1">
+            <StackPanel x:Name="SceneImagesPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TxtEvent" Text="Вы входите в подземелье..." FontSize="22" FontWeight="Bold" TextAlignment="Center" Margin="5" Foreground="Black"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Border x:Name="BrdNextRoom" Grid.Column="0" BorderBrush="#660099" BorderThickness="1" CornerRadius="5" Margin="5" Padding="10" Background="#660099">
+                        <Button x:Name="BtnNextRoom" Content="Идти дальше"  FontSize="16"  BorderThickness="0" Background="#660099" FontWeight="Bold" Foreground="White" Click="BtnNextRoom_Click"/>
+                    </Border>
+                    <Border x:Name="BrdAttack" Grid.Column="1" BorderBrush="#e50000" BorderThickness="1" CornerRadius="5" Margin="5" Padding="10" Background="#e50000">
+                        <Button x:Name="BtnAttack" Content="Атаковать" FontSize="16"  BorderThickness="0" Background="#e50000" FontWeight="Bold" Foreground="White"  Click="BtnAttack_Click"/>
+                    </Border>
+                    <Border x:Name="BrdDefend" Grid.Column="2" BorderBrush="#2016a0" BorderThickness="1" CornerRadius="5" Margin="5" Padding="10" Background="#2016a0">
+                        <Button x:Name="BtnDefend" Content="Защита"  FontSize="16"  BorderThickness="0" Background="#2016a0"  FontWeight="Bold" Foreground="White" Click="BtnDefend_Click"/>
+                    </Border>
+                    <Border x:Name="BrdTake" Grid.Column="3" BorderBrush="#e67200" BorderThickness="1" CornerRadius="5" Margin="5" Padding="10" Background="#e67200">
+                        <Button x:Name="BtnTake" Content="Взять предмет"  FontSize="16"  BorderThickness="0" Background="#e67200" FontWeight="Bold" Foreground="White" Click="BtnTake_Click"/>
+                    </Border>
+                    <Border x:Name="BrdSkip" Grid.Column="4" BorderBrush="#660099" BorderThickness="1" CornerRadius="5" Margin="5" Padding="10" Background="#660099">
+                        <Button x:Name="BtnSkip" Content="Пройти мимо"  FontSize="16"  BorderThickness="0" Background="#660099" FontWeight="Bold" Foreground="White"  Click="BtnSkip_Click" />
+                    </Border>
+                </Grid>
+
+            </StackPanel>
+        </StackPanel>
+
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="#660099" BorderThickness="1" CornerRadius="5" Margin="10" Padding="10" Background="#660099">
+            <StackPanel>
+                <TextBlock Text="Снаряжение:" FontSize="18" FontWeight="Bold" Margin="5" Foreground="White"/>
+                <TextBlock x:Name="TxtWeapon" Text="Оружие: " FontSize="16" TextWrapping="Wrap" Foreground="White" Margin="5"/>
+                <TextBlock x:Name="TxtArmor" Text="Броня: " FontSize="16" TextWrapping="Wrap" Foreground="White" Margin="5"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="#660099" BorderThickness="1" Margin="10" CornerRadius="5" Padding="10" Background="#660099">
+            <ScrollViewer x:Name="LogScroll">
+                <TextBlock x:Name="TxtLog" FontSize="14" TextWrapping="Wrap" Foreground="White" Margin="5"/>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Window>
