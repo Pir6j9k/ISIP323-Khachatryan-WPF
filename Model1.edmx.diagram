@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="542a0310571943409c0c2ad9155a84c5" Name="Diagram1">
+        <EntityTypeShape EntityType="TheBeautySalonModel.Appointment" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.Manufacturer" Width="1.5" PointX="8.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.OrderItem" Width="1.5" PointX="12.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.Order" Width="1.5" PointX="10.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.Product" Width="1.5" PointX="10.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.ProductType" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.Role" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.Service" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.ServiceType" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.sysdiagram" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheBeautySalonModel.User" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_Appointments_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_Appointments_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_Appointments_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_Products_Manufacturers" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_OrderItems_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_OrderItems_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_Products_ProductTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.FK_Services_ServiceTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="TheBeautySalonModel.MasterServices" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
