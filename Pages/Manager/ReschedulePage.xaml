@@ -1,0 +1,67 @@
+﻿<Page x:Class="ISIP323_Khachatryan_WPF.Pages.Manager.ReschedulePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ISIP323_Khachatryan_WPF.Pages.Manager"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="800"
+      Title="Страница редактирования записи">
+
+    <Grid Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
+        <Border Background="#42AAFF" CornerRadius="15" BorderBrush="#03567E" BorderThickness="2" Padding="30">
+            <StackPanel>
+                <TextBlock Text="Редактирование записи" Margin="10" HorizontalAlignment="Center" FontFamily="{StaticResource ShS}" FontWeight="Bold" Foreground="#ffd700" FontSize="24" TextAlignment="Center" VerticalAlignment="Center"/>
+                <Separator Background="#03567E" Margin="5"/>
+
+                <StackPanel x:Name="PanelSearchClient" Visibility="Collapsed">
+                    <TextBlock Text="Выберите клиента:" FontFamily="{StaticResource ShS}" FontSize="18" FontWeight="SemiBold" Foreground="#ffd700" Margin="5"/>
+                    <ComboBox x:Name="CmbClient" DisplayMemberPath="FullName" SelectedValuePath="Id" Height="25" FontSize="16" VerticalContentAlignment="Center" FontFamily="{StaticResource ShS}" FontWeight="SemiBold" Foreground="#03567E" Margin="5" BorderThickness="0" SelectionChanged="CmbClient_SelectionChanged"/>
+                </StackPanel>
+
+                <TextBlock Text="Клиент:" FontFamily="{StaticResource ShS}" FontSize="18" FontWeight="SemiBold"  Foreground="#ffd700" Margin="5"/>
+                <TextBlock x:Name="TblClientName" Text="Имя клиента" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="SemiBold" Foreground="#03567E" Margin="5"/>
+
+                <TextBlock Text="Услуга:" FontFamily="{StaticResource ShS}" FontSize="18" FontWeight="SemiBold"  Foreground="#ffd700" Margin="5"/>
+                <ComboBox x:Name="CmbService" DisplayMemberPath="Name" SelectedValuePath="Id" Height="25" FontSize="16"  VerticalContentAlignment="Center" FontFamily="{StaticResource ShS}" FontWeight="SemiBold" Foreground="#03567E" Margin="5" BorderThickness="0" SelectionChanged="CmbService_SelectionChanged"/>
+
+                <TextBlock Text="Мастер:" FontFamily="{StaticResource ShS}" FontSize="18" FontWeight="SemiBold"  Foreground="#ffd700" Margin="5"/>
+                <ComboBox x:Name="CmbMaster" DisplayMemberPath="FullName" SelectedValuePath="Id" Height="25" FontSize="16" VerticalContentAlignment="Center" FontFamily="{StaticResource ShS}" FontWeight="SemiBold" Foreground="#03567E" Margin="5" BorderThickness="0"/>
+
+                <UniformGrid Columns="2">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Новая дата:" FontFamily="{StaticResource ShS}" FontSize="18" FontWeight="SemiBold"  Foreground="#ffd700" Margin="5"/>
+                        <DatePicker x:Name="DpNewDate" Margin="5" FontFamily="{StaticResource ShS}" FontSize="16" Foreground="#03567E" BorderThickness="0"/>
+                    </StackPanel>
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Время:" FontFamily="{StaticResource ShS}" FontSize="18" FontWeight="SemiBold"  Foreground="#ffd700" Margin="5"/>
+                        <ComboBox x:Name="CmbTime" VerticalContentAlignment="Center" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="SemiBold" Foreground="#03567E" Margin="5" BorderThickness="0">
+                            <ComboBoxItem Content="09:00"/>
+                            <ComboBoxItem Content="10:00"/>
+                            <ComboBoxItem Content="11:00"/>
+                            <ComboBoxItem Content="12:00"/>
+                            <ComboBoxItem Content="14:00"/>
+                            <ComboBoxItem Content="15:00"/>
+                            <ComboBoxItem Content="16:00"/>
+                            <ComboBoxItem Content="17:00"/>
+                        </ComboBox>
+                    </StackPanel>
+                </UniformGrid>
+
+                <TextBlock Text="Способ оплаты:" FontFamily="{StaticResource ShS}" FontSize="18" FontWeight="SemiBold" Foreground="#ffd700" Margin="5"/>
+                <ComboBox x:Name="CmbPayment" Height="25" FontSize="16" VerticalContentAlignment="Center" FontFamily="{StaticResource ShS}" FontWeight="SemiBold" Foreground="#03567E" Margin="5" BorderThickness="0">
+                    <ComboBoxItem Content="Наличные"/>
+                    <ComboBoxItem Content="Карта"/>
+                </ComboBox>
+
+
+                <UniformGrid Columns="2">
+                    <Button Background="Transparent" Margin="10,15,10,10" BorderThickness="0" Content="Отмена" Foreground="#03567E" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="Bold" Click="BtnCancel_Click"/>
+                    <Border Background="#ffd700" BorderBrush="#ffd700" BorderThickness="0" CornerRadius="5" Padding="5" Margin="10,15,10,10">
+                        <Button Background="#FFD700" BorderThickness="0" Content="Сохранить" Foreground="#03567E" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="Bold" Click="BtnSave_Click"/>
+                    </Border>
+                </UniformGrid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
