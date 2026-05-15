@@ -52,60 +52,61 @@
             </Grid>
         </StackPanel>
 
-        <ListBox x:Name="LBProducts" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderThickness="0" Background="Transparent" Margin="10" Padding="10" FontFamily="{StaticResource ShS}" MouseDoubleClick="LBoxProducts_MouseDoubleClick">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel HorizontalAlignment="Center"/>
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
 
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Border x:Name="ProductBorder" BorderBrush="#03567E" BorderThickness="2" CornerRadius="15" Margin="10" Padding="10">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="150"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
+            <ListBox x:Name="LBProducts" d:ItemsSource="{d:SampleData ItemCount=6}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="0" Background="Transparent" Margin="10" Padding="10" FontFamily="{StaticResource ShS}" MouseDoubleClick="LBoxProducts_MouseDoubleClick">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel HorizontalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
 
-                            <Image Grid.Row="0" Source="{Binding ImagePath}" Margin="5" Stretch="Uniform"/>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border x:Name="ProductBorder" BorderBrush="#03567E" BorderThickness="2" CornerRadius="15" Margin="10" Padding="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Row="1" Text="{Binding Name}" FontSize="18" FontWeight="Bold" Foreground="#F0EFEB" Margin="5" TextWrapping="Wrap" Width="200" />
 
-                            <TextBlock Grid.Row="2" Text="{Binding ProductType.Name}" Foreground="#F0EFEB" Margin="5"/>
+                                <TextBlock Grid.Row="0" Text="{Binding Name}" FontSize="18" FontWeight="Bold" Foreground="#F0EFEB" Margin="5" TextWrapping="Wrap" Width="200" />
 
-                            <StackPanel Grid.Row="4">
-                                <Separator Background="#03567E" Margin="5"/>
+                                <TextBlock Grid.Row="1" Text="{Binding ProductType.Name}" Foreground="#F0EFEB" Margin="5"/>
 
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
-                                    <TextBlock Text="{Binding Price, StringFormat={}{0:N0} ₽}" FontSize="16" Foreground="#ffd700" FontWeight="Bold" VerticalAlignment="Center" Margin="5"/>
+                                <StackPanel Grid.Row="2">
+                                    <Separator Background="#03567E" Margin="5"/>
 
-                                    <Border x:Name="DiscountLabel" Background="#F0EFEB" CornerRadius="5" Margin="5" Padding="5">
-                                        <TextBlock Text="{Binding DiscountPercentage, StringFormat=-{0}%}"  Foreground="#E74C3C" FontWeight="Bold" FontSize="12"/>
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+                                        <TextBlock Text="{Binding Price, StringFormat={}{0:N0} ₽}" FontSize="16" Foreground="#ffd700" FontWeight="Bold" VerticalAlignment="Center" Margin="5"/>
+
+                                        <Border x:Name="DiscountLabel" Background="#F0EFEB" CornerRadius="5" Margin="5" Padding="5">
+                                            <TextBlock Text="{Binding DiscountPercentage, StringFormat=-{0}%}"  Foreground="#E74C3C" FontWeight="Bold" FontSize="12"/>
+                                        </Border>
+                                    </StackPanel>
+
+                                    <Border Background="#ffd700" BorderBrush="#ffd700" BorderThickness="0" CornerRadius="5" VerticalAlignment="Center" Padding="5" Margin="5">
+                                        <Button Background="#FFD700" BorderThickness="0" Content="В корзину" Foreground="#03567E"  FontSize="16" FontWeight="Bold" Tag="{Binding}" Click="BtnAddToCart_Click"/>
                                     </Border>
                                 </StackPanel>
+                            </Grid>
+                        </Border>
 
-                                <Border Background="#ffd700" BorderBrush="#ffd700" BorderThickness="0" CornerRadius="5" VerticalAlignment="Center" Padding="5" Margin="5">
-                                    <Button Background="#FFD700" BorderThickness="0" Content="В корзину" Foreground="#03567E"  FontSize="16" FontWeight="Bold" Tag="{Binding}" Click="BtnAddToCart_Click"/>
-                                </Border>
-                            </StackPanel>
-                        </Grid>
-                    </Border>
-
-                    <DataTemplate.Triggers>
-                        <DataTrigger Binding="{Binding IsHighDiscount}" Value="True">
-                            <Setter TargetName="ProductBorder" Property="Background" Value="#E8F5E9"/>
-                            <Setter TargetName="ProductBorder" Property="BorderBrush" Value="#C8E6C9"/>
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding DiscountPercentage}" Value="0">
-                            <Setter TargetName="DiscountLabel" Property="Visibility" Value="Collapsed"/>
-                        </DataTrigger>
-                    </DataTemplate.Triggers>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding IsHighDiscount}" Value="True">
+                                <Setter TargetName="ProductBorder" Property="Background" Value="#F0EFEB"/>
+                                <Setter TargetName="ProductBorder" Property="BorderBrush" Value="#C8E6C9"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding DiscountPercentage}" Value="0">
+                                <Setter TargetName="DiscountLabel" Property="Visibility" Value="Collapsed"/>
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
     </Grid>
 </Page>

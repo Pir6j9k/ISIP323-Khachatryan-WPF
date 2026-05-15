@@ -24,7 +24,7 @@
                 </ComboBox>
 
                 <UniformGrid Columns="2">
-                    <Button Background="Transparent" Margin="10,15,10,5" BorderThickness="0" Content="Отмена" Foreground="#03567E" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="Bold"/>
+                    <Button Background="Transparent" Margin="10,15,10,5" BorderThickness="0" Content="Отмена" Foreground="#03567E" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="Bold" Click="BtnCancel_Click"/>
 
                     <Border Background="#ffd700" BorderBrush="#ffd700" BorderThickness="0" CornerRadius="5" Padding="5" Margin="10,15,10,5">
                         <Button Background="#FFD700" BorderThickness="0" Content="Подтвердить" Foreground="#03567E" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="Bold" Click="BtnConfirm_Click"/>

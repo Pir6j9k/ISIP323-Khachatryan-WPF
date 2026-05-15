@@ -33,7 +33,7 @@
                     <StackPanel Grid.Row="2" VerticalAlignment="Top">
                         <Button Tag="Main" Background="#42AAFF" BorderThickness="0" Content="Главная" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" />
                         <Button Tag="Shop" Background="#42AAFF" BorderThickness="0" Content="Магазин" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" />
-                        <Button x:Name="BtnCart" Tag="Cart" Background="#42AAFF" BorderThickness="0" Content="Корзина" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" />
+                        <Button x:Name="BtnCart" Tag="Cart" Background="#42AAFF" BorderThickness="0" Content="Корзина" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" Visibility="Collapsed" />
                         <Button x:Name="BtnMyRecords" Tag="Account" Background="#42AAFF" BorderThickness="0" Content="Мой кабинет" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" Visibility="Collapsed"/>
                         <Button x:Name="BtnMasterRecords" Tag="Master" Background="#42AAFF" BorderThickness="0" Content="Мои смены" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" Visibility="Collapsed" />
                         <Button x:Name="BtnManagerPanel" Tag="Manager" Background="#42AAFF" BorderThickness="0" Content="Управление салоном" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" Visibility="Collapsed"/>
@@ -48,8 +48,8 @@
                         <TextBlock x:Name="TxtUserRole" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" TextWrapping="Wrap"/>
                     </StackPanel>
                     
-                    <Border Grid.Row="5"  Background="#ffd700" BorderBrush="#ffd700" BorderThickness="0" CornerRadius="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="5" Margin="5">
-                        <Button x:Name="BtnLogin" Background="#FFD700" BorderThickness="0" Content="Войти в аккаунт" Foreground="#03567E" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="Bold" Click="BtnLogin_Click"/>
+                    <Border Grid.Row="5"  Background="#ffd700" BorderBrush="#ffd700" BorderThickness="0" CornerRadius="5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="10" Margin="5">
+                        <Button x:Name="BtnLogin" Background="#FFD700" BorderThickness="0" Content="Войти в аккаунт" Foreground="#03567E" FontFamily="{StaticResource ShS}" FontSize="20" FontWeight="Bold" Click="BtnLogin_Click"/>
                     </Border>
 
                 </Grid>
@@ -69,7 +69,7 @@
                         <TextBlock x:Name="TxtPageTitle" Text="Главная страница" Margin="10" HorizontalAlignment="Center" FontFamily="{StaticResource ShS}" FontWeight="Bold" Foreground="#ffd700" FontSize="26" TextAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                     <Separator Grid.Row="1" Background="#03567E"/>
-                    <Frame x:Name="MainFrame" Grid.Row="2" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated" />
+                    <Frame x:Name="MainFrame" Grid.Row="2" NavigationUIVisibility="Hidden" Navigated="MainFrame_Navigated" ScrollViewer.VerticalScrollBarVisibility="Visible" />
                 </Grid>
             </StackPanel>
         </Border>

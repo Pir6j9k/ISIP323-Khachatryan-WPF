@@ -15,16 +15,16 @@
                 <Separator Margin="5" Background="#03567E"/>
 
                 <TextBlock Text="Номер телефона:" FontFamily="{StaticResource ShS}" FontSize="18" FontWeight="SemiBold"  Foreground="#ffd700" Margin="5"/>
-                <TextBox x:Name="TbxPhone" Height="25" VerticalContentAlignment="Center" FontFamily="{StaticResource ShS}" FontWeight="SemiBold" Foreground="#03567E" Margin="5" BorderThickness="0"/>
+                <TextBox x:Name="TbxPhone" Height="25" VerticalContentAlignment="Center" FontFamily="{StaticResource ShS}" FontSize="16"  Foreground="#03567E" Margin="5" BorderThickness="0"/>
 
                 <TextBlock Text="Пароль:" FontFamily="{StaticResource ShS}" FontSize="18" FontWeight="SemiBold"  Foreground="#ffd700" Margin="5"/>
-                <PasswordBox x:Name="PBPassword" Height="25" VerticalContentAlignment="Center" Margin="5" FontFamily="{StaticResource ShS}" FontWeight="SemiBold" Foreground="#03567E" BorderThickness="0"/>
+                <PasswordBox x:Name="PBPassword" Height="25" VerticalContentAlignment="Center" Margin="5" FontFamily="{StaticResource ShS}" FontSize="16" Foreground="#03567E" BorderThickness="0"/>
 
                 <Border Background="#ffd700" BorderBrush="#ffd700" BorderThickness="0" CornerRadius="5" Padding="5" Margin="10,15,10,5">
                     <Button x:Name="BtnLogin" Background="#FFD700" BorderThickness="0" Content="Войти" Foreground="#03567E" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="Bold" Click="BtnLogin_Click"/>
                 </Border>
 
-                <Button Content="Назад" Margin="15,5,15,5" Background="Transparent" BorderThickness="0" FontFamily="{StaticResource ShS}" FontWeight="Bold" Foreground="#03567E"/>
+                <Button Content="Назад" Margin="15,5,15,5" Background="Transparent" BorderThickness="0" FontFamily="{StaticResource ShS}" FontSize="16" FontWeight="Bold" Foreground="#03567E" Click="BtnBack_Click"/>
             </StackPanel>
         </Border>
     </Grid>

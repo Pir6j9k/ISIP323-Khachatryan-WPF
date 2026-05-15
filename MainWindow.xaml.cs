@@ -95,7 +95,7 @@ namespace ISIP323_Khachatryan_WPF
                 BtnLogin.Content = "Выйти из аккаунта";
                 BtnLogin.Visibility = Visibility.Visible;
                 BtnCart.Visibility = Visibility.Visible;
-
+ 
                 string role = Core.AuthUser.Role.Name;
                 switch (role)
                 {

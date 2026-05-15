@@ -81,7 +81,13 @@ namespace ISIP323_Khachatryan_WPF.Pages.Salon
         {
             if (sender is Button btn && btn.Tag is int id)
             {
-                MessageBox.Show($"Услуга ID {id} выбрана. Переходим к записи!");
+                if (Core.AuthUser == null)
+                {
+                    MessageBox.Show("Для записи на услугу необходимо войти в систему.", "Требуется авторизация", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    NavigationService.Navigate(new Pages.Client.LoginPage());
+                    return;
+                }
+
                 NavigationService.Navigate(new Pages.AppointmentPage(id));
             }
         }

@@ -73,8 +73,8 @@ namespace ISIP323_Khachatryan_WPF.Pages.Shop
         {
             if (Core.AuthUser == null)
             {
-                MessageBox.Show("Для оформления заказа необходимо авторизоваться в системе!",
-                                "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Для оформления заказа необходимо авторизоваться в системе!", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                NavigationService.Navigate(new Pages.Client.LoginPage());
                 return;
             }
             if ((sender as Button).Tag is Product product)
