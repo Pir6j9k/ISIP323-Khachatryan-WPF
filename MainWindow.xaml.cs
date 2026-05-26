@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -136,6 +137,10 @@ namespace ISIP323_Khachatryan_WPF
                     MainFrame.Navigate(new Pages.Salon.MainPage());
                 }
             }
-        }    
+        }
+        private void BtnHelp_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("C:Help/help.chm");
+        }
     }
 }

@@ -33,11 +33,13 @@
                     <StackPanel Grid.Row="2" VerticalAlignment="Top">
                         <Button Tag="Main" Background="#42AAFF" BorderThickness="0" Content="Главная" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" />
                         <Button Tag="Shop" Background="#42AAFF" BorderThickness="0" Content="Магазин" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" />
+                        
                         <Button x:Name="BtnCart" Tag="Cart" Background="#42AAFF" BorderThickness="0" Content="Корзина" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" Visibility="Collapsed" />
                         <Button x:Name="BtnMyRecords" Tag="Account" Background="#42AAFF" BorderThickness="0" Content="Мой кабинет" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" Visibility="Collapsed"/>
                         <Button x:Name="BtnMasterRecords" Tag="Master" Background="#42AAFF" BorderThickness="0" Content="Мои смены" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" Visibility="Collapsed" />
                         <Button x:Name="BtnManagerPanel" Tag="Manager" Background="#42AAFF" BorderThickness="0" Content="Управление салоном" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" Visibility="Collapsed"/>
                         <Button x:Name="BtnAdminPanel" Tag="Admin" Background="#42AAFF" BorderThickness="0" Content="Пользователи" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="Navigating" Visibility="Collapsed"/>
+                        <Button x:Name="BtnHelp" Background="#42AAFF" BorderThickness="0" Content="Справка" Foreground="#ffd700" FontFamily="{StaticResource ShS}" Margin="5" Padding="5" FontSize="20" Click="BtnHelp_Click" />
                     </StackPanel>
 
                     <Separator Grid.Row="3" Background="#03567E" VerticalAlignment="Bottom"/>
